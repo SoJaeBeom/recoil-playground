@@ -1,8 +1,8 @@
 import { atom, selector } from 'recoil';
 
 interface IGithubInfo {
-  users: string;
-  repo: string;
+  users: string | undefined;
+  repo: string | undefined;
 }
 
 export const githubInfoState = atom<IGithubInfo>({

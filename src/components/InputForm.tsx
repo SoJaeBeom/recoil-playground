@@ -4,15 +4,25 @@ import styled from 'styled-components';
 import { githubInfoState } from '../recoil/store';
 import Stars from './Stars';
 
-const InputForm = (): JSX.Element => {
-  const [githubInfo, setGithubInfo] = useRecoilState(githubInfoState);
+interface IGithubInfo {
+  users: string | undefined;
+  repo: string | undefined;
+}
 
-  const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const repoRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+const InputForm = (): JSX.Element => {
+  const [githubInfo, setGithubInfo] =
+    useRecoilState<IGithubInfo>(githubInfoState);
+
+  // const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  // const repoRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  const userRef = useRef<HTMLInputElement>(null);
+  const repoRef = useRef<HTMLInputElement>(null);
 
   const onClickHandler = () => {
-    const users = userRef.current.value;
-    const repo = repoRef.current.value;
+    const users = userRef.current?.value;
+    const repo = repoRef.current?.value;
+
     const info = { users, repo };
 
     setGithubInfo(info);
