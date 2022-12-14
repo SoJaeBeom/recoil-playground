@@ -1,5 +1,5 @@
 import React from 'react';
-import InputForm from './components/InputForm';
+import InputForm from './components/GithubStar/InputForm';
 
 function App() {
   return <InputForm />;

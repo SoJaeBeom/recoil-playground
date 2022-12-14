@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { getStars } from '../recoil/store';
+import { getStars } from '../../recoil/GithubStar/store';
 
 interface IStars {
   className: string;

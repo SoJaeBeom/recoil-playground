@@ -1,7 +1,7 @@
 import { Suspense, useRef } from 'react';
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { githubInfoState } from '../recoil/store';
+import { githubInfoState } from '../../recoil/GithubStar/store';
 import Stars from './Stars';
 
 interface IGithubInfo {
