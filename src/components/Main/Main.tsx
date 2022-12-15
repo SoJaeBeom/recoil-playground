@@ -13,6 +13,10 @@ const Main = () => {
       case 'todo':
         navigate('/todo');
         break;
+
+      case 'usermanagement':
+        navigate('/usermanagement');
+        break;
     }
   };
 
@@ -23,6 +27,9 @@ const Main = () => {
       </button>
       <button id='todo' onClick={moveToPage}>
         Todo
+      </button>
+      <button id='usermanagement' onClick={moveToPage}>
+        UserManagement
       </button>
     </>
   );
