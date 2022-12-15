@@ -2,7 +2,7 @@ import { atom, selector } from 'recoil';
 
 export type status = 'DONE' | 'DOING';
 
-interface toDo {
+export interface toDo {
   status: status;
   contents: string;
 }
@@ -29,5 +29,8 @@ export const selectToDo = selector<toDo[]>({
     const originalToDos = get(toDos);
     const nowStatus = get(selectStatus);
     return originalToDos.filter((toDo) => toDo.status === nowStatus);
+  },
+  set: ({ set }, newToDo) => {
+    set(toDos, newToDo);
   },
 });
