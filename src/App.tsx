@@ -1,14 +1,7 @@
-import React from 'react';
-import InputForm from './components/GithubStar/InputForm';
-import TodoComponent from './components/Todo/TodoComponent';
+import Router from './router/router';
 
 function App() {
-  return (
-    <>
-      <InputForm />
-      <TodoComponent />
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
